@@ -45,22 +45,16 @@ function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
 end
 
-local node = Terminal:new({ cmd = "node", hidden = true })
+local cargo = Terminal:new({ cmd = "cargo build", hidden = true })
 
 function _NODE_TOGGLE()
-	node:toggle()
+  cargo:toggle()
 end
 
-local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
-
-function _NCDU_TOGGLE()
-	ncdu:toggle()
-end
-
-local htop = Terminal:new({ cmd = "htop", hidden = true })
+local btm = Terminal:new({ cmd = "btm", hidden = true })
 
 function _HTOP_TOGGLE()
-	htop:toggle()
+	btm:toggle()
 end
 
 local python = Terminal:new({ cmd = "python", hidden = true })
