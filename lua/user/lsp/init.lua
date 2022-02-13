@@ -5,4 +5,7 @@ end
 
 require "user.lsp.lsp-installer"
 require("user.lsp.handlers").setup()
-require "user.lsp.null-ls"
+-- Does not format
+--require "user.lsp.null-ls"
+
+require "user.formatter"

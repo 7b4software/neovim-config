@@ -18,16 +18,19 @@ lsp_installer.on_server_ready(function(server)
     local sumneko_opts = require("user.lsp.settings.sumneko_lua")
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
+  if server.name == "bashls" then
+    opts = vim.tbl_deep_extend("force", server:get_default_options(), opts)
+  end
   if server.name == "rust_analyzer" then
     require("rust-tools").setup {
       -- The "server" property provided in rust-tools setup function are the
       -- settings rust-tools will provide to lspconfig during init.            -- 
       -- We merge the necessary settings from nvim-lsp-installer (server:get_default_options())
       -- with the user's own settings (opts).
-      server = vim.tbl_deep_extend("force", server:get_default_options(), opts)
+      opts = vim.tbl_deep_extend("force", server:get_default_options(), opts)
     }
     -- local rust_opts = require("user.lsp.settings.rust")
-    opts = vim.tbl_deep_extend("force", rust_opts, opts)
+    ---opts = vim.tbl_deep_extend("force", rust_opts, opts)
     server:attach_buffers()
     return
   end

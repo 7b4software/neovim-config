@@ -76,6 +76,8 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use 'rust-lang/rust.vim'
   use 'simrat39/rust-tools.nvim'
+  use 'hunger/vim-slint'
+  use "mhartington/formatter.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
